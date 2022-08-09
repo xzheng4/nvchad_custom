@@ -11,11 +11,18 @@ M.ui = {
 M.plugins = {
   user = {
     ["goolord/alpha-nvim"] = {
-      disable = false,
+      disable = true,
     },
 
-    -- we are just modifying lspconfig's packer definition table
-    -- put this in your custom plugins section i.e M.plugins.user field 
+    ["mhinz/vim-startify"] = {
+
+    },
+
+    ["dhananjaylatkar/cscope_maps.nvim"] = {
+      config = function()
+        require("cscope_maps")
+      end,
+    },
 
     ["neovim/nvim-lspconfig"] = {
       config = function()
@@ -34,7 +41,7 @@ M.mappings = {
       ["<leader>fv"] = { "<cmd> Telescope grep_string <CR>", "�   grep string" },
     },
   },
---[[
+
   ["lspconfig"] = {
     n = {
       ["<F3>"] = {
@@ -47,7 +54,14 @@ M.mappings = {
       ["<F2>"] = { "<cmd> copen <CR>", "�   jump to quickfix" },
     },
   },
-]]
+
+  ["tabufline"] = {
+    n = {
+      -- disable conflict key
+      ["<Bslash>"] = "",
+    },
+  }
+
 }
 
 -- now run :PackerSync
