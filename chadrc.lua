@@ -27,6 +27,29 @@ M.plugins = {
   },
 }
 
+
+M.mappings = {
+  ["telescope"] = {
+    n = {
+      ["<leader>fv"] = { "<cmd> Telescope grep_string <CR>", "�   grep string" },
+    },
+  },
+--[[
+  ["lspconfig"] = {
+    n = {
+      ["<F3>"] = {
+        function()
+          vim.lsp.buf.references {}
+        end,
+        "   lsp references",
+      },
+      ["<F4>"] = { "<cmd> cclose <CR>", "�   close quickfix" },
+      ["<F2>"] = { "<cmd> copen <CR>", "�   jump to quickfix" },
+    },
+  },
+]]
+}
+
 -- now run :PackerSync
 
 return M
