@@ -60,7 +60,7 @@ M.mappings = {
   ["tabufline"] = {
     n = {
       -- disable conflict key
-      ["<Bslash>"] = "",
+      ["<Bslash>"] = {"","Disabled TbufNum key"},
     },
   }
 
